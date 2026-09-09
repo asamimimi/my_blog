@@ -1,0 +1,13 @@
+// 色の変数
+$bace: #F7F5F3;
+$point: #B2D4CE;
+$text: #47392C;
+$white: #fff;
+$blue: #B2D4CE;
+
+$breakpoints: (
+    'sm': 'screen and (max-width: 414px)',
+    'md': 'screen and (max-width: 768px)',
+    'lg': 'screen and (max-width: 1100px)',
+    'xl': 'screen and (max-width: 1300px)',
+    ) !default;

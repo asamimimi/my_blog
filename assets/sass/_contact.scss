@@ -1,0 +1,97 @@
+@use "variable" as *;
+@use "mixin" as m;
+
+/*========== 
+お問い合わせ
+========== */
+form {
+    width: calc(768/1366)*100%;
+    background-color: $bace;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding: 2.0625rem 6.125rem;
+
+    @include m.mq(md) {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 2.5rem;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 0.625rem;
+        font-size: 1.125rem;
+
+        @include m.mq(md) {
+            font-size: 1rem;
+        }
+    }
+
+    .req {
+        background-color: #E5625E;
+        color: $white;
+        padding: 0.15rem 0.6875rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        margin-left: 1rem;
+        line-height: 1;
+
+        @include m.mq(md) {
+            font-size: 0.625rem;
+        }
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        background-color: $white;
+        border: 1px solid $text;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    input[type="submit"] {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2.5rem;
+        width: 21.875rem;
+        padding: 0.625rem 0;
+        border-radius: 0;
+        border: none;
+        text-align: center;
+        background-color: $blue;
+        color: $text;
+        transition: all 0.3s;
+
+        @include m.mq(md) {
+            width: 100%;
+        }
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+
+    }
+}
+
+.contact {
+    width: 100%;
+    // max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 6.875rem;
+    padding-top: 150px;
+
+    @include m.mq(md) {
+        padding-bottom: 4.8125rem;
+        padding-top: 70px;
+    }
+}

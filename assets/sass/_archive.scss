@@ -1,0 +1,83 @@
+@use "variable" as *;
+@use "mixin" as m;
+
+.news {
+    padding-top: calc(150px + 3.75rem);
+    padding-bottom: 7.5rem;
+
+    @include m.mq(md) {
+        padding-bottom: 80px;
+        padding-top: 3.75rem;
+    }
+}
+
+.news__inner {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: calc(20/1366)*100%;
+    row-gap: 3.125rem;
+    width: 100%;
+
+    @include m.mq(md) {
+        column-gap: 5%;
+        row-gap: 20px;
+    }
+}
+
+.news__card {
+    width: calc(325/1366)*100%;
+
+    @include m.mq(md) {
+        width: 45%;
+    }
+}
+
+.newsCard {
+    &__link {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &__cate {
+        position: absolute;
+        font-size: 0.75rem;
+        line-height: 1;
+        padding: 4px 8px;
+        background-color: $blue;
+        border-radius: 50px;
+        color: $white;
+        top: 0.625rem;
+        left: 0.625rem;
+    }
+
+    &__img {
+        aspect-ratio: 3/2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+
+        img {
+            border-radius: 10px;
+            object-fit: cover;
+
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+
+        @include m.mq(md) {
+            font-size: 1.125rem;
+        }
+
+    }
+
+    &__date {
+        font-size: 0.875rem;
+        display: block;
+        margin-bottom: 2px;
+    }
+
+}
