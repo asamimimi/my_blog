@@ -49,7 +49,7 @@
       ?>
           <p class="mv-newsContainer__title"> <?php the_title(); ?>
           </p>
-          <a href="<?php echo esc_url(home_url('/news')); ?>" class="mv-newsContainer__link">More <i class="fa-solid fa-chevron-right"></i></a>
+          <a href="<?php echo esc_url(home_url('/news')); ?>" class="mv-newsContainer__link">More <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_arrow.svg" alt="矢印のアイコン" loading="lazy" class="mv-newsContainer__link__icon"></a>
       <?php
         endwhile;
       endif;

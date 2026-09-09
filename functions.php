@@ -2,13 +2,6 @@
 // cssの読み込み
 function add_link_files()
 {
-  //FontAwesome
-  wp_enqueue_style(
-    'fontawesome',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
-    array(),
-    '6.1.1'
-  );
   //GoogleFont 
   wp_enqueue_style(
     'zenmaru',
@@ -16,8 +9,14 @@ function add_link_files()
   );
   wp_enqueue_style('my-resetstyle', get_template_directory_uri() . '/assets/css/reset.css');
   wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css');
-  // 自作JSの読み込み
-  wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), false, true);
+  // 自作JSの読み込み（jQuery非依存・deferで非ブロッキング化）
+  wp_enqueue_script(
+    'my-script',
+    get_template_directory_uri() . '/assets/js/script.js',
+    array(),
+    filemtime(get_template_directory() . '/assets/js/script.js'),
+    array('in_footer' => true, 'strategy' => 'defer')
+  );
 }
 add_action('wp_enqueue_scripts', 'add_link_files');
 

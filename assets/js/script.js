@@ -7,8 +7,10 @@ humbtn.addEventListener('click', function () {
     body.classList.toggle('menu-open');
 });
 
-jQuery(".header__navItem a").click(function () {
-    jQuery("body").removeClass('menu-open');
+document.querySelectorAll(".header__navItem a").forEach(function (el) {
+    el.addEventListener("click", function () {
+        body.classList.remove("menu-open");
+    });
 });
 // / 追従メニューの関数
 const header = document.querySelector('.header');

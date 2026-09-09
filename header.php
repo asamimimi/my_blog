@@ -52,7 +52,9 @@
                     お問い合わせ</a>
             </nav>
 
-            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="header__contact onlySp"><i class="fa-regular fa-envelope"></i></a>
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="header__contact onlySp">
+               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_mail.svg" alt="お問い合わせ" loading="lazy" class="header__contact_icon">
+            </a>
             <button class="mobile-menu-icon">
                 <span></span>
                 <span></span>

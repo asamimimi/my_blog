@@ -203,6 +203,10 @@ img {
   }
 }
 
+.header__contact_icon {
+  width: 16px;
+}
+
 /*========== 
  ハンバーガーアイコン
 ========== */
@@ -562,6 +566,7 @@ a:hover {
   display: flex;
   justify-content: end;
   align-items: center;
+  gap: 4px;
   font-weight: 500;
   margin-top: 5px;
 }
@@ -570,9 +575,9 @@ a:hover {
     font-size: 0.875rem;
   }
 }
-.mv-newsContainer__link i {
-  margin-left: 4px;
-  font-size: 0.75rem;
+
+.mv-newsContainer__link__icon {
+  width: 8px;
 }
 
 /*========== 
