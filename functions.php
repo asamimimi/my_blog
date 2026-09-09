@@ -2,9 +2,6 @@
 // cssの読み込み
 function add_link_files()
 {
-  wp_enqueue_style('my-resetstyle', get_template_directory_uri() . '/assets/css/reset.css');
-  wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css');
-  //webFont
   //FontAwesome
   wp_enqueue_style(
     'fontawesome',
@@ -15,11 +12,10 @@ function add_link_files()
   //GoogleFont 
   wp_enqueue_style(
     'zenmaru',
-    'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap',
-    array(),
-    null
+    'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap',false
   );
-
+  wp_enqueue_style('my-resetstyle', get_template_directory_uri() . '/assets/css/reset.css');
+  wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css');
   // 自作JSの読み込み
   wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), false, true);
 }
