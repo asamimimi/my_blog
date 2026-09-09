@@ -461,6 +461,9 @@ a:hover {
     width: 75%;
   }
 }
+.mv__imge img {
+  aspect-ratio: 444/395;
+}
 
 /*========== 
  MVのアニメーション
@@ -505,8 +508,20 @@ a:hover {
   width: 35.1515151515%;
 }
 
+.mv-animation__left__img01 {
+  aspect-ratio: 243/383;
+}
+
+.mv-animation__left__img02 {
+  aspect-ratio: 148/345;
+}
+
 .mv-animation__right {
   width: 44.3939393939%;
+}
+
+.mv-animation__right__img {
+  aspect-ratio: 586/538;
 }
 
 /*========== 

@@ -82,6 +82,10 @@
     @include m.mq(sm) {
         width: 75%;
     }
+
+    img {
+        aspect-ratio: 444/395;
+    }
 }
 
 /*========== 
@@ -134,9 +138,21 @@
     width: calc((232 /660)*100%);
 }
 
+.mv-animation__left__img01 {
+    aspect-ratio: 243/383;
+}
+
+.mv-animation__left__img02 {
+    aspect-ratio: 148/345;
+}
+
 .mv-animation__right {
     width: calc((293 /660)*100%);
 
+}
+
+.mv-animation__right__img {
+    aspect-ratio: 586/538;
 }
 
 /*========== 
