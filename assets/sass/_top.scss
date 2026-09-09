@@ -8,6 +8,7 @@
 .fv {
     height: 100vh;
     background-image: url(../img/fv_bg.png);
+    background-image: image-set(url(../img/fv_bg.webp) type("image/webp"), url(../img/fv_bg.png) type("image/png"));
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

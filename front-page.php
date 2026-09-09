@@ -14,7 +14,10 @@
         </p>
       </div>
       <div class="mv__imge">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_mv.png" alt="カフェオレでくつろぐ部屋の様子" width="1295" height="1152">
+        <picture>
+          <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/image_mv.webp" type="image/webp">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_mv.png" alt="カフェオレでくつろぐ部屋の様子" width="1295" height="1152" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <!-- アニメーションするイラスト -->
       <div class="mv-animation">
