@@ -2,28 +2,41 @@
 // cssの読み込み
 function add_link_files()
 {
-  wp_enqueue_style('my-resetstyle', get_template_directory_uri() . '/assets/css/reset.css');
-  wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css');
-  //webFont
-  //FontAwesome
-  wp_enqueue_style(
-    'fontawesome',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css',
-    array(),
-    '6.1.1'
-  );
   //GoogleFont 
   wp_enqueue_style(
     'zenmaru',
-    'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap',
-    array(),
-    null
+    'https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap',false
   );
+  wp_enqueue_style('my-resetstyle', get_template_directory_uri() . '/assets/css/reset.css');
+  wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css');
 
-  // 自作JSの読み込み
-  wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), false, true);
+  if ( !is_admin() ) {
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '1.11.1');
+    }
+  // 自作JSの読み込み（jQuery非依存・deferで非ブロッキング化）
+  wp_enqueue_script(
+    'my-script',
+    get_template_directory_uri() . '/assets/js/script.js',
+    array(),
+    filemtime(get_template_directory() . '/assets/js/script.js'),
+    array('in_footer' => true, 'strategy' => 'defer')
+  );
 }
 add_action('wp_enqueue_scripts', 'add_link_files');
+
+
+// フロントページのLCP画像を先読み（WebP対応ブラウザ向け）
+function preload_lcp_images()
+{
+  if (!is_front_page()) {
+    return;
+  }
+  $uri = get_template_directory_uri();
+  echo '<link rel="preload" as="image" href="' . esc_url($uri . '/assets/img/image_mv.webp') . '" type="image/webp" fetchpriority="high">' . "\n";
+  echo '<link rel="preload" as="image" href="' . esc_url($uri . '/assets/img/fv_bg.webp') . '" type="image/webp">' . "\n";
+}
+add_action('wp_head', 'preload_lcp_images', 1);
 
 
 function post_has_archive($args, $post_type)

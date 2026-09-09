@@ -14,20 +14,23 @@
         </p>
       </div>
       <div class="mv__imge">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_mv.png" alt="カフェオレでくつろぐ部屋の様子" loading="lazy">
+        <picture>
+          <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/image_mv.webp" type="image/webp">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_mv.png" alt="カフェオレでくつろぐ部屋の様子" width="1295" height="1152" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <!-- アニメーションするイラスト -->
       <div class="mv-animation">
         <div class="mv-animation__left">
           <div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_kids_01.png" alt="学校へ行く子供のイラスト" loading="lazy">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_kids_01.png" alt="学校へ行く子供のイラスト" class="mv-animation__left__img01" width="243" height="383">
           </div>
           <div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_kids_02.png" alt="学校へ行く子供のイラスト" loading="lazy">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_kids_02.png" alt="学校へ行く子供のイラスト" class="mv-animation__left__img02" width="148" height="345">
           </div>
         </div>
         <div class="mv-animation__right">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_mama.png" alt="選択をする母親" loading="lazy">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/image_mama.png" alt="選択をする母親" class="mv-animation__right__img" width="586" height="538">
         </div>
       </div>
     </div>
@@ -49,7 +52,7 @@
       ?>
           <p class="mv-newsContainer__title"> <?php the_title(); ?>
           </p>
-          <a href="<?php echo esc_url(home_url('/news')); ?>" class="mv-newsContainer__link">More <i class="fa-solid fa-chevron-right"></i></a>
+          <a href="<?php echo esc_url(home_url('/news')); ?>" class="mv-newsContainer__link">More <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_arrow.svg" alt="矢印のアイコン" loading="lazy" class="mv-newsContainer__link__icon"></a>
       <?php
         endwhile;
       endif;

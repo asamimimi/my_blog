@@ -8,6 +8,7 @@
 .fv {
     height: 100vh;
     background-image: url(../img/fv_bg.png);
+    background-image: image-set(url(../img/fv_bg.webp) type("image/webp"), url(../img/fv_bg.png) type("image/png"));
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -82,6 +83,10 @@
     @include m.mq(sm) {
         width: 75%;
     }
+
+    img {
+        aspect-ratio: 444/395;
+    }
 }
 
 /*========== 
@@ -134,9 +139,21 @@
     width: calc((232 /660)*100%);
 }
 
+.mv-animation__left__img01 {
+    aspect-ratio: 243/383;
+}
+
+.mv-animation__left__img02 {
+    aspect-ratio: 148/345;
+}
+
 .mv-animation__right {
     width: calc((293 /660)*100%);
 
+}
+
+.mv-animation__right__img {
+    aspect-ratio: 586/538;
 }
 
 /*========== 
@@ -171,7 +188,7 @@
 
 .mv-newsContainer__head {
     font-size: 0.875rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 1.125rem;
 
     @include m.mq(md) {
@@ -195,6 +212,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    gap: 4px;
     font-weight: 500;
     margin-top: 5px;
 
@@ -202,13 +220,11 @@
         font-size: 0.875rem;
     }
 
-    i {
-        margin-left: 4px;
-        font-size: 0.75rem;
-    }
 }
 
-
+.mv-newsContainer__link__icon {
+    width: 8px;
+}
 
 /*========== 
 メッセージ
